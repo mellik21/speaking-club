@@ -18,15 +18,17 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <liquibase.version>3.6.2</liquibase.version>
-        <postgresql.version>42.2.23</postgresql.version>
+        <postgresql.version>42.3.3</postgresql.version>
         <h2db.version>1.4.190</h2db.version>
         <spring.profiles.active>dev</spring.profiles.active>
         <orika.version>1.5.4</orika.version>
-        <hibernate.version>5.6.1.Final</hibernate.version>
+        <hibernate.version>5.6.5.Final</hibernate.version>
         <skip.unit.test.coverage>false</skip.unit.test.coverage>
         <jacoco-version>0.8.7</jacoco-version>
-        <spring-test-version>2.5.0</spring-test-version>
+        <spring-test-version>2.6.4</spring-test-version>
         <hystrix-version>1.4.7.RELEASE</hystrix-version>
+        <jjwt-version>0.9.1</jjwt-version>
+        <jaxb-api-version>2.4.0-b180830.0359</jaxb-api-version>
     </properties>
 
     <dependencies>
@@ -39,6 +41,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -47,6 +50,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>${jjwt-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb-api-version}</version>
         </dependency>
 
         <dependency>
@@ -99,12 +114,14 @@
             <artifactId>spring-cloud-starter-hystrix</artifactId>
             <version>${hystrix-version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
             <version>${spring-test-version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.junit.vintage</groupId>
             <artifactId>junit-vintage-engine</artifactId>

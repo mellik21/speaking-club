@@ -31,3 +31,6 @@ feign:
         loggerLevel: basic
   hystrix:
     enabled: true
+
+jwt:
+  secret: secret
