@@ -8,17 +8,13 @@ eureka:
   client:
     serviceUrl.defaultZone: http://localhost:8761/eureka/
     registerWithEureka: false
-    fetchRegistry: true
+    fetchRegistry: false
   instance:
     lease-expiration-duration-in-seconds: 2
-#
+
 #zuul:
 #  routes:
-#    department-service:
-#      path: departments/**
+#    account-service:
+#      path: /**
 #      stripPrefix: false
-#      serviceId: DEPARTMENT-SERVICE
-#    employee-service:
-#      path: employees/**
-#      stripPrefix: false
-#      serviceId: EMPLOYEE-SERVICE
+#      serviceId: ACCOUNT-SERVICE

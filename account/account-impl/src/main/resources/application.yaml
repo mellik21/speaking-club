@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: account-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employeesdb
+    username: postgres
+    password: 111
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    generate-ddl: false
+    properties:
+      hibernate:
+        temp.use_jdbc_metadata_defaults: false
+server:
+  port: 8086
+eureka:
+  client:
+    initial-instance-info-replication-interval-seconds: 2
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl.defaultZone: http://localhost:8761/eureka/
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+  hystrix:
+    enabled: true
