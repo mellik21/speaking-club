@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: eureka
+server:
+  port: 8761
+
+eureka:
+  client:
+    serviceUrl.defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: false
+    fetchRegistry: true
+  instance:
+    lease-expiration-duration-in-seconds: 2
+#
+#zuul:
+#  routes:
+#    department-service:
+#      path: departments/**
+#      stripPrefix: false
+#      serviceId: DEPARTMENT-SERVICE
+#    employee-service:
+#      path: employees/**
+#      stripPrefix: false
+#      serviceId: EMPLOYEE-SERVICE
