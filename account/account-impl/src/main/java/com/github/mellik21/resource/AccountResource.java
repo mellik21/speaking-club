@@ -1,5 +1,6 @@
 package com.github.mellik21.resource;
 
+import com.github.mellik21.api.AccountResourceApi;
 import com.github.mellik21.dto.AuthenticationRequest;
 import com.github.mellik21.dto.AuthenticationResponse;
 import com.github.mellik21.util.JwtUtil;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-public class AccountControllerImpl implements AccountController {
+public class AccountResource implements AccountResourceApi {
     private final AuthenticationManager authenticationManager;
     private final UserDetailsService userDetailsService;
     private final JwtUtil jwtUtil;
